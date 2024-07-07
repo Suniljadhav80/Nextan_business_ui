@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+
+.inter-App {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,20 +24,30 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--body_background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--link_color);
 }
 
 .App-link {
-  color: #61dafb;
+  color:var(--body_background);
+}
+:root{
+  --body:white;
+  --body_color:black;
+   
 }
 
+[data-theme="dark"]{
+   --body_background:#282c34;
+   --body_color:white;
+   --link_color:cyan;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +55,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+header{
+  z-index:10001 !important;
+}
+.btn-primary{
+   @apply bg-[#C80036] md:h-auto mr-20 text-white px-4 mt-4 py-2 inline-block h-10 text-justify  font-medium shadow-sm rounded transition-all duration-300 ease-in-out hover:-translate-y-2 
 }
